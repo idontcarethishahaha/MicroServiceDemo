@@ -1,0 +1,20 @@
+server:
+  port: 14204
+
+spring:
+  application:
+    name: dubbo-product #商品服务名称（id）
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.227.128:8848
+        username: nacos
+        password: nacos
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1 # 让Dubbo自动选择可用的端口完成内部通信
+  registry:
+    address: nacos://192.168.227.128:8848
+  scan: # 通知Dubbo到指定的包扫描@DubboService注解
+    base-packages: org.example.service.impl

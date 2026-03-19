@@ -1,0 +1,12 @@
+server:
+  port: 14202
+
+spring:
+  application:
+    name: openfeign-order #订单服务名
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.227.128:8848
+        username: nacos
+        password: nacos

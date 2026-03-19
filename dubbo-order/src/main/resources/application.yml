@@ -1,0 +1,22 @@
+server:
+  port: 14207
+
+spring:
+  application:
+    name: dubbo-order #订单服务名称（id）
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.227.128:8848
+        username: nacos
+        password: nacos
+dubbo:
+  protocol:
+    name: dubbo
+    port: -1 # 让Dubbo自动选择可用的端口完成内部通信
+  registry:
+    address: nacos://192.168.227.128:8848
+  consumer:
+    timeout: 3000 # 设置远程服务调用的超时时间，单位：MS
+    retries: 3 # 设置重试次数，当远程服务调用失败会重复n次
+    check: false # 设置启动当前服务时要不要检测下游服务已经准备就绪

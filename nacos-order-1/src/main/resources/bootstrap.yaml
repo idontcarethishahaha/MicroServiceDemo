@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: nacos-config-order
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.227.128:8848 #nacos配置中心的地址
+        file-extension: yaml #配置文件的后缀
+        group: alibaba #配置文件分组名称（自定义）
+  profiles:
+    active: prod # 可以通过这个设置来切换环境 prod / dev / test
+
+# 忽略nacos config无限次的心跳检测日志 （仅记录警告以上级别
+logging:
+  level:
+    com.alibaba.nacos.client.naming: warn
+# 最终的配置文件名将由以下几部分构成 nacos-config-order-test.yaml
+# ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
