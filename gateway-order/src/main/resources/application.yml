@@ -1,0 +1,12 @@
+server:
+  port: 14402
+
+spring:
+  application:
+    name: gateway-order #订单服务名称（id）
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.227.128:8848
+        username: nacos
+        password: nacos

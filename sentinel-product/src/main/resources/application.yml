@@ -1,8 +1,8 @@
 server:
-  port: 14301 # 端口号
+  port: 14302 # 端口号
 spring:
   application:
-    name: sentinel-order # 项目名称
+    name: sentinel-product # 项目名称
   cloud:
     nacos:
       discovery:
@@ -16,8 +16,3 @@ spring:
       transport:
         port: 8888
         dashboard: 192.168.227.128:8808
-
-# 开启sentinel回调功能，当Feign远程访问服务失败时，执行sentinel的回调方法
-feign:
-  sentinel:
-    enabled: true

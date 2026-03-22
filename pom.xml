@@ -17,6 +17,9 @@
         <module>dubbo-product</module>
         <module>dubbo-order</module>
         <module>sentinel-order</module>
+        <module>sentinel-product</module>
+        <module>gateway-order</module>
+        <module>gateway</module>
     </modules>
 
     <properties>

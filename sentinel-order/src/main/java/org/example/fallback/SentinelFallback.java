@@ -6,6 +6,7 @@ import com.alibaba.csp.sentinel.slots.block.degrade.DegradeRuleManager;
 import com.alibaba.csp.sentinel.slots.block.flow.FlowException;
 import com.alibaba.csp.sentinel.slots.block.flow.param.ParamFlowException;
 import com.alibaba.csp.sentinel.slots.system.SystemBlockException;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 类说明：哨兵默认执行的降级类
@@ -14,7 +15,17 @@ import com.alibaba.csp.sentinel.slots.system.SystemBlockException;
  * @version 1.0
  * @date 2026/3/19 20:38
  */
+@Slf4j
 public class SentinelFallback {
+
+    public static String paramFallback(String name,Integer age,Throwable e){
+        String exceptionMsg = e.getMessage();
+        if(e instanceof ParamFlowException){
+            log.warn("参数:name={},age={}",name,age);
+            exceptionMsg = "您访问的太快或当前访问人数过多，请稍后重试~";
+        }
+        return exceptionMsg;
+    }
     public static String fallback(Throwable e) {
         // 获取sentinel抛出的异常消息
         String exceptionMessage = e.getMessage();

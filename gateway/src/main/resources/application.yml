@@ -1,0 +1,39 @@
+server:
+  port: 14401
+
+spring:
+  application:
+    name: gateway #网关服务名称（id）
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.227.128:8848
+        username: nacos
+        password: nacos
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 允许网关获取其他在 nacos 中已注册的服务
+      routes:
+        - id: gateway-order-route # 定义到订单微服务的路由规则，id是唯一标识
+          uri: lb://gateway-order
+          order: 1 # 设置路由的优先级，数越小级越高
+          predicates:
+            - Path=/gateway-order-server/**
+          filters:
+            - StripPrefix=1
+        # 定义商品服务的路由
+        - id: gateway-product-route
+          uri: lb://gateway-product
+          order: 1
+          predicates:
+            - Path=/gateway-prod-server/**
+          filters:
+            - StripPrefix=1
+        - id: gateway-user-route
+          uri: lb://gateway-user
+          order: 1
+          predicates:
+            - Path=/gateway-user-server/**
+          filters:
+            - StripPrefix=1
