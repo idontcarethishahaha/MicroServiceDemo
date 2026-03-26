@@ -20,16 +20,21 @@ spring:
           order: 1 # 设置路由的优先级，数越小级越高
           predicates:
             - Path=/gateway-order-server/**
+            - Query=a, \d+ # 和请求参数相关的断言
+            - Age=18,70 #注册自定义断言，给定必要参数值
           filters:
             - StripPrefix=1
+            - AddRequestParameter=name,kenan # 在原来的请求参数基础上增加一个name=kenan
+            - SetStatus=250 # 修改响应状态码为250
+            - Req=true,false #通过在主配置文件中修改配置值来影响过滤器内部代码的执行逻辑
         # 定义商品服务的路由
         - id: gateway-product-route
           uri: lb://gateway-product
           order: 1
-          predicates:
+          predicates: # 断言
             - Path=/gateway-prod-server/**
           filters:
-            - StripPrefix=1
+            - StripPrefix=1 #把前一层路径忽略掉
         - id: gateway-user-route
           uri: lb://gateway-user
           order: 1
@@ -37,3 +42,11 @@ spring:
             - Path=/gateway-user-server/**
           filters:
             - StripPrefix=1
+sentinel:
+  gateway:
+    groups: # 数组
+      - name: groupA
+        pattern: /gateway-order-server/api/v1/** # 针对订单服务路径限流
+        matchStrategy: 1 #路径匹配
+        count: 10 # 流量的阈值,qps
+        intervalSec: 3 # 统计的时间窗口，默认为一秒，此处表示每3秒最多10次访问
