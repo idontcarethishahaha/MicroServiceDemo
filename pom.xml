@@ -20,6 +20,9 @@
         <module>sentinel-product</module>
         <module>gateway-order</module>
         <module>gateway</module>
+        <module>zipkin-order</module>
+        <module>zipkin-product</module>
+        <module>rocketmq</module>
     </modules>
 
     <properties>
@@ -33,6 +36,8 @@
         <lombok.version>1.18.24</lombok.version>
         <hutool-all.version>5.8.25</hutool-all.version>
         <dubbo-spring-boot-starter.version>3.2.9</dubbo-spring-boot-starter.version>
+        <micrometer-tracing-bom.version>1.0.4</micrometer-tracing-bom.version>
+        <rocketmq-spring-boot-starter.version>2.2.2</rocketmq-spring-boot-starter.version>
     </properties>
 
     <dependencyManagement>
@@ -61,6 +66,16 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!--micrometer-tracing-bom-->
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-tracing-bom</artifactId>
+                <version>${micrometer-tracing-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 

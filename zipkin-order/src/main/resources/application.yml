@@ -1,0 +1,22 @@
+server:
+  port: 14501 # 端口号
+spring:
+  application:
+    name: mmt-order # 项目名称
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.227.128:8848 # # nacos地址，集群使用逗号分割
+        namespace: public # 命名空间ID值，默认 public
+        group: DEFAULT_GROUP # 微服务分组，默认 DEFAULT_GROUP
+        cluster-name: DEFAULT # 微服务集群名称，默认 DEFAULT
+        username: nacos # 认证账号（后台开启了身份认证）
+        password: nacos # 认证密码（后台开启了身份认证）
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0 # 信息采样率100%，意味着服务的每一次请求都会被zipkin记录下来
+  zipkin:
+    tracing:
+      endpoint: http://192.168.227.128:9411/api/v2/spans # 配置zipkin服务所在的地址
