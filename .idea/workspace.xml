@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad841e5d-2292-44f3-8d49-30153115cef3" name="Changes" comment="学习使用Sentinel和Gateway路由转发">
-      <change afterPath="$PROJECT_DIR$/gateway-order/src/main/java/org/example/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/org/example/component/SentinelGatewayProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/org/example/config/SentinelConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/org/example/filter/ReqGatewayFilterFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/java/org/example/predicate/AgeRoutePredicateFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="ad841e5d-2292-44f3-8d49-30153115cef3" name="Changes" comment="学习了RocketMQ消息队列" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,52 +39,73 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Spring Boot.DubboOrderApp.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.DubboProductApp (1).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.DubboProductApp (2).executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.DubboProductApp.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.GatewayApp.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.GatewayOrderApp.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.NacosOrder1App.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.NacosOrder2App.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.OpenFeignOrderApp.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.OpenFeignProductApp.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.SentinelOrderApp.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.SentinelProductApp.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/workspace-java/MicroServiceDemo/gateway/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;D:/workspace-java/MicroServiceDemo/gateway/src/main/java/org/example/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.28375&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ConsumerTest.executor": "Run",
+    "JUnit.ASyncOrderTest.test.executor": "Run",
+    "JUnit.AsyncRandomTest.test.executor": "Run",
+    "JUnit.ConsumerTest.test.executor": "Run",
+    "JUnit.OnewayOrderTest.test.executor": "Run",
+    "JUnit.OnewayRandomTest.test.executor": "Run",
+    "JUnit.ProducerTest.test.executor": "Run",
+    "JUnit.SyncOrderTest.test.executor": "Run",
+    "JUnit.SyncRandomTest.test.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.DubboOrderApp.executor": "Run",
+    "Spring Boot.DubboProductApp (1).executor": "Run",
+    "Spring Boot.DubboProductApp (2).executor": "Run",
+    "Spring Boot.DubboProductApp.executor": "Run",
+    "Spring Boot.GatewayApp.executor": "Run",
+    "Spring Boot.GatewayOrderApp.executor": "Run",
+    "Spring Boot.NacosOrder1App.executor": "Run",
+    "Spring Boot.NacosOrder2App.executor": "Run",
+    "Spring Boot.OpenFeignOrderApp.executor": "Run",
+    "Spring Boot.OpenFeignProductApp.executor": "Run",
+    "Spring Boot.SentinelOrderApp.executor": "Run",
+    "Spring Boot.SentinelProductApp.executor": "Run",
+    "Spring Boot.ZipkinOrderApp.executor": "Run",
+    "Spring Boot.ZipkinProductApp.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/workspace-java/MicroServiceDemo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "D:/workspace-java/MicroServiceDemo/rocketmq/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.28375",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "File.Encoding",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace-java\MicroServiceDemo" />
+      <recent name="D:\workspace-java\MicroServiceDemo\sentinel-order" />
+      <recent name="D:\workspace-java\MicroServiceDemo\zipkin-order\src\main\java\org\example" />
+      <recent name="D:\workspace-java\MicroServiceDemo\zipkin-order\src\main\java\org" />
       <recent name="D:\workspace-java\MicroServiceDemo\gateway\src\main\resources" />
-      <recent name="D:\workspace-java\MicroServiceDemo\sentinel-product\src\main\resources" />
-      <recent name="D:\workspace-java\MicroServiceDemo\sentinel-order\src\main\resources\META-INF\services" />
-      <recent name="D:\workspace-java\MicroServiceDemo\sentinel-order\src\main\java\org\example\config" />
-      <recent name="D:\workspace-java\MicroServiceDemo\dubbo-order\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\workspace-java\MicroServiceDemo" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="producer" />
+      <recent name="org.example.feign" />
       <recent name="org.example.controller" />
     </key>
   </component>
@@ -105,86 +119,101 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.GatewayApp">
-    <configuration name="DubboOrderApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="dubbo-order" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.DubboOrderApp" />
+  <component name="RunManager" selected="JUnit.OnewayOrderTest.test">
+    <configuration name="ASyncOrderTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rocketmq" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="producer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="producer" />
+      <option name="MAIN_CLASS_NAME" value="producer.ASyncOrderTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GatewayApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="gateway" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.GatewayApp" />
+    <configuration name="AsyncRandomTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rocketmq" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="producer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="producer" />
+      <option name="MAIN_CLASS_NAME" value="producer.AsyncRandomTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GatewayOrderApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="gateway-order" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.GatewayOrderApp" />
+    <configuration name="OnewayOrderTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rocketmq" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="producer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="producer" />
+      <option name="MAIN_CLASS_NAME" value="producer.OnewayOrderTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SentinelOrderApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="sentinel-order" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.SentinelOrderApp" />
+    <configuration name="OnewayRandomTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rocketmq" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="producer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="producer" />
+      <option name="MAIN_CLASS_NAME" value="producer.OnewayRandomTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SentinelProductApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="sentinel-product" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.SentinelProductApp" />
+    <configuration name="SyncOrderTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rocketmq" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="producer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="producer" />
+      <option name="MAIN_CLASS_NAME" value="producer.SyncOrderTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.GatewayApp" />
-      <item itemvalue="Spring Boot.GatewayOrderApp" />
-      <item itemvalue="Spring Boot.SentinelProductApp" />
-      <item itemvalue="Spring Boot.SentinelOrderApp" />
-      <item itemvalue="Spring Boot.DubboOrderApp" />
+      <item itemvalue="JUnit.ASyncOrderTest.test" />
+      <item itemvalue="JUnit.AsyncRandomTest.test" />
+      <item itemvalue="JUnit.OnewayOrderTest.test" />
+      <item itemvalue="JUnit.OnewayRandomTest.test" />
+      <item itemvalue="JUnit.SyncOrderTest.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.GatewayApp" />
-        <item itemvalue="Spring Boot.GatewayOrderApp" />
-        <item itemvalue="Spring Boot.SentinelOrderApp" />
-        <item itemvalue="Spring Boot.SentinelProductApp" />
-        <item itemvalue="Spring Boot.DubboOrderApp" />
+        <item itemvalue="JUnit.OnewayOrderTest.test" />
+        <item itemvalue="JUnit.ASyncOrderTest.test" />
+        <item itemvalue="JUnit.SyncOrderTest.test" />
+        <item itemvalue="JUnit.OnewayRandomTest.test" />
+        <item itemvalue="JUnit.AsyncRandomTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -209,6 +238,9 @@
       <workItem from="1773917010936" duration="8692000" />
       <workItem from="1774141671220" duration="19824000" />
       <workItem from="1774520386695" duration="9683000" />
+      <workItem from="1774534155017" duration="13000" />
+      <workItem from="1774537408771" duration="4000" />
+      <workItem from="1774749063938" duration="17064000" />
     </task>
     <task id="LOCAL-00001" summary="学习使用Sentinel和Gateway路由转发">
       <option name="closed" value="true" />
@@ -218,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774170067541</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="学习了RocketMQ消息队列">
+      <option name="closed" value="true" />
+      <created>1774795295663</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1774795295663</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,7 +267,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="学习适用Sentinel和Gateway路由转发" />
     <MESSAGE value="学习使用Sentinel和Gateway路由转发" />
-    <option name="LAST_COMMIT_MESSAGE" value="学习使用Sentinel和Gateway路由转发" />
+    <MESSAGE value="学习了RocketMQ消息队列" />
+    <option name="LAST_COMMIT_MESSAGE" value="学习了RocketMQ消息队列" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
