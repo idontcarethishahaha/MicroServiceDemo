@@ -1,0 +1,13 @@
+server:
+  port: 14602
+
+spring:
+  application:
+    name: rocketmq-order
+
+rocketmq:
+  producer:
+    group: test-producer-group
+    send-message-timeout: 5000 # 消息投递的超时时间，默认是3秒
+    retry-times-when-send-failed: 3 # 设置消息投递失败后重试次数，默认 2
+  name-server: 192.168.227.128:9876

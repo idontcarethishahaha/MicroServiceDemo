@@ -23,6 +23,8 @@
         <module>zipkin-order</module>
         <module>zipkin-product</module>
         <module>rocketmq</module>
+        <module>rocketmq-order</module>
+        <module>rocketmq-user</module>
     </modules>
 
     <properties>
@@ -38,6 +40,7 @@
         <dubbo-spring-boot-starter.version>3.2.9</dubbo-spring-boot-starter.version>
         <micrometer-tracing-bom.version>1.0.4</micrometer-tracing-bom.version>
         <rocketmq-spring-boot-starter.version>2.2.2</rocketmq-spring-boot-starter.version>
+<!--        <rocketmq-spring-boot-starter.version>2.3.0</rocketmq-spring-boot-starter.version>-->
     </properties>
 
     <dependencyManagement>
