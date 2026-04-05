@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad841e5d-2292-44f3-8d49-30153115cef3" name="Changes" comment="学习了RocketMQ消息队列" />
+    <list default="true" id="ad841e5d-2292-44f3-8d49-30153115cef3" name="Changes" comment="学习了RocketMQ消息队列">
+      <change afterPath="$PROJECT_DIR$/rocketmq-order/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rocketmq-order/src/main/java/org/example/entity/OrderMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rocketmq-order/src/main/java/org/example/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rocketmq-order/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rocketmq-order/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rocketmq-order/src/test/java/OrderServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rocketmq-user/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rocketmq-user/src/main/java/org/example/RocketMQUserApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rocketmq-user/src/main/java/org/example/entity/OrderMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rocketmq-user/src/main/java/org/example/listener/OrderMessageListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rocketmq-user/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rocketmq-user/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rocketmq/src/test/java/producer/DelayTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,11 +57,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ConsumerTest.executor": "Run",
+    "Application.DelayTest.executor": "Run",
     "JUnit.ASyncOrderTest.test.executor": "Run",
     "JUnit.AsyncRandomTest.test.executor": "Run",
     "JUnit.ConsumerTest.test.executor": "Run",
+    "JUnit.DelayTest.test1.executor": "Run",
     "JUnit.OnewayOrderTest.test.executor": "Run",
     "JUnit.OnewayRandomTest.test.executor": "Run",
+    "JUnit.OrderServiceTest.test.executor": "Run",
     "JUnit.ProducerTest.test.executor": "Run",
     "JUnit.SyncOrderTest.test.executor": "Run",
     "JUnit.SyncRandomTest.test.executor": "Run",
@@ -66,19 +84,20 @@
     "Spring Boot.NacosOrder2App.executor": "Run",
     "Spring Boot.OpenFeignOrderApp.executor": "Run",
     "Spring Boot.OpenFeignProductApp.executor": "Run",
+    "Spring Boot.RocketMQUserApp.executor": "Run",
     "Spring Boot.SentinelOrderApp.executor": "Run",
     "Spring Boot.SentinelProductApp.executor": "Run",
     "Spring Boot.ZipkinOrderApp.executor": "Run",
     "Spring Boot.ZipkinProductApp.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/workspace-java/MicroServiceDemo",
+    "last_opened_file_path": "D:/workspace-java/MicroServiceDemo/rocketmq-user/src/main/java/org/example",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "D:/workspace-java/MicroServiceDemo/rocketmq/src/main/java/org/example/Main.java",
+    "onboarding.tips.debug.path": "D:/workspace-java/MicroServiceDemo/rocketmq-user/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.28375",
@@ -94,11 +113,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace-java\MicroServiceDemo\rocketmq-user\src\main\java\org\example" />
+      <recent name="D:\workspace-java\MicroServiceDemo\rocketmq-user\src\main\resources" />
+      <recent name="D:\workspace-java\MicroServiceDemo\rocketmq-order\src\main" />
       <recent name="D:\workspace-java\MicroServiceDemo" />
       <recent name="D:\workspace-java\MicroServiceDemo\sentinel-order" />
-      <recent name="D:\workspace-java\MicroServiceDemo\zipkin-order\src\main\java\org\example" />
-      <recent name="D:\workspace-java\MicroServiceDemo\zipkin-order\src\main\java\org" />
-      <recent name="D:\workspace-java\MicroServiceDemo\gateway\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\workspace-java\MicroServiceDemo" />
@@ -119,8 +138,9 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.OnewayOrderTest.test">
-    <configuration name="ASyncOrderTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.RocketMQUserApp">
+    <configuration name="DelayTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="producer.DelayTest" />
       <module name="rocketmq" />
       <extension name="coverage">
         <pattern>
@@ -128,15 +148,11 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="producer" />
-      <option name="MAIN_CLASS_NAME" value="producer.ASyncOrderTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AsyncRandomTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DelayTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rocketmq" />
       <extension name="coverage">
         <pattern>
@@ -145,8 +161,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="producer" />
-      <option name="MAIN_CLASS_NAME" value="producer.AsyncRandomTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="producer.DelayTest" />
+      <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,52 +184,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OnewayRandomTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rocketmq" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="producer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="producer" />
-      <option name="MAIN_CLASS_NAME" value="producer.OnewayRandomTest" />
+    <configuration name="OrderServiceTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rocketmq-order" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="OrderServiceTest" />
       <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SyncOrderTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rocketmq" />
+    <configuration name="RocketMQUserApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="rocketmq-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.RocketMQUserApp" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="producer.*" />
+          <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="producer" />
-      <option name="MAIN_CLASS_NAME" value="producer.SyncOrderTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ASyncOrderTest.test" />
-      <item itemvalue="JUnit.AsyncRandomTest.test" />
+      <item itemvalue="Application.DelayTest" />
+      <item itemvalue="JUnit.DelayTest.test1" />
+      <item itemvalue="JUnit.OrderServiceTest.test" />
       <item itemvalue="JUnit.OnewayOrderTest.test" />
-      <item itemvalue="JUnit.OnewayRandomTest.test" />
-      <item itemvalue="JUnit.SyncOrderTest.test" />
+      <item itemvalue="Spring Boot.RocketMQUserApp" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.RocketMQUserApp" />
+        <item itemvalue="JUnit.OrderServiceTest.test" />
+        <item itemvalue="Application.DelayTest" />
+        <item itemvalue="JUnit.DelayTest.test1" />
         <item itemvalue="JUnit.OnewayOrderTest.test" />
-        <item itemvalue="JUnit.ASyncOrderTest.test" />
-        <item itemvalue="JUnit.SyncOrderTest.test" />
-        <item itemvalue="JUnit.OnewayRandomTest.test" />
-        <item itemvalue="JUnit.AsyncRandomTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -241,6 +248,9 @@
       <workItem from="1774534155017" duration="13000" />
       <workItem from="1774537408771" duration="4000" />
       <workItem from="1774749063938" duration="17762000" />
+      <workItem from="1775133041529" duration="1349000" />
+      <workItem from="1775146007913" duration="46000" />
+      <workItem from="1775357069989" duration="7618000" />
     </task>
     <task id="LOCAL-00001" summary="学习使用Sentinel和Gateway路由转发">
       <option name="closed" value="true" />
