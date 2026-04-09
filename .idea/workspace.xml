@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad841e5d-2292-44f3-8d49-30153115cef3" name="Changes" comment="学习了RocketMQ消息队列">
-      <change afterPath="$PROJECT_DIR$/rocketmq-order/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocketmq-order/src/main/java/org/example/entity/OrderMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocketmq-order/src/main/java/org/example/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocketmq-order/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocketmq-order/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocketmq-order/src/test/java/OrderServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocketmq-user/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocketmq-user/src/main/java/org/example/RocketMQUserApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocketmq-user/src/main/java/org/example/entity/OrderMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocketmq-user/src/main/java/org/example/listener/OrderMessageListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocketmq-user/src/main/resources/META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocketmq-user/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rocketmq/src/test/java/producer/DelayTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rabbitmq/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/java/org/example/config/DirectConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/java/org/example/config/FanoutConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/java/org/example/config/TopicConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rabbitmq/src/test/java/RabbitmqTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +59,11 @@
     "JUnit.OnewayRandomTest.test.executor": "Run",
     "JUnit.OrderServiceTest.test.executor": "Run",
     "JUnit.ProducerTest.test.executor": "Run",
+    "JUnit.RabbitmqTest.executor": "Run",
+    "JUnit.RabbitmqTest.testDirect.executor": "Run",
+    "JUnit.RabbitmqTest.testFanout.executor": "Run",
+    "JUnit.RabbitmqTest.testTopicA.executor": "Run",
+    "JUnit.RabbitmqTest.testTopicB.executor": "Run",
     "JUnit.SyncOrderTest.test.executor": "Run",
     "JUnit.SyncRandomTest.test.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -84,6 +82,7 @@
     "Spring Boot.NacosOrder2App.executor": "Run",
     "Spring Boot.OpenFeignOrderApp.executor": "Run",
     "Spring Boot.OpenFeignProductApp.executor": "Run",
+    "Spring Boot.RabbitmqApp.executor": "Run",
     "Spring Boot.RocketMQUserApp.executor": "Run",
     "Spring Boot.SentinelOrderApp.executor": "Run",
     "Spring Boot.SentinelProductApp.executor": "Run",
@@ -97,7 +96,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "D:/workspace-java/MicroServiceDemo/rocketmq-user/src/main/java/org/example/Main.java",
+    "onboarding.tips.debug.path": "D:/workspace-java/MicroServiceDemo/rabbitmq/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.28375",
@@ -138,89 +137,70 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.RocketMQUserApp">
-    <configuration name="DelayTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="producer.DelayTest" />
-      <module name="rocketmq" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="producer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DelayTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rocketmq" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="producer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="producer" />
-      <option name="MAIN_CLASS_NAME" value="producer.DelayTest" />
-      <option name="METHOD_NAME" value="test1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OnewayOrderTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rocketmq" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="producer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="producer" />
-      <option name="MAIN_CLASS_NAME" value="producer.OnewayOrderTest" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderServiceTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rocketmq-order" />
+  <component name="RunManager" selected="JUnit.RabbitmqTest.testDirect">
+    <configuration name="RabbitmqTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rabbitmq" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="OrderServiceTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="RabbitmqTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RabbitmqTest.testDirect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rabbitmq" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RabbitmqTest" />
+      <option name="METHOD_NAME" value="testDirect" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RocketMQUserApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="rocketmq-user" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.RocketMQUserApp" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration name="RabbitmqTest.testFanout" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rabbitmq" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RabbitmqTest" />
+      <option name="METHOD_NAME" value="testFanout" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RabbitmqTest.testTopicA" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rabbitmq" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RabbitmqTest" />
+      <option name="METHOD_NAME" value="testTopicA" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RabbitmqTest.testTopicB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rabbitmq" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RabbitmqTest" />
+      <option name="METHOD_NAME" value="testTopicB" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.DelayTest" />
-      <item itemvalue="JUnit.DelayTest.test1" />
-      <item itemvalue="JUnit.OrderServiceTest.test" />
-      <item itemvalue="JUnit.OnewayOrderTest.test" />
-      <item itemvalue="Spring Boot.RocketMQUserApp" />
+      <item itemvalue="JUnit.RabbitmqTest" />
+      <item itemvalue="JUnit.RabbitmqTest.testDirect" />
+      <item itemvalue="JUnit.RabbitmqTest.testFanout" />
+      <item itemvalue="JUnit.RabbitmqTest.testTopicA" />
+      <item itemvalue="JUnit.RabbitmqTest.testTopicB" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.RocketMQUserApp" />
-        <item itemvalue="JUnit.OrderServiceTest.test" />
-        <item itemvalue="Application.DelayTest" />
-        <item itemvalue="JUnit.DelayTest.test1" />
-        <item itemvalue="JUnit.OnewayOrderTest.test" />
+        <item itemvalue="JUnit.RabbitmqTest.testDirect" />
+        <item itemvalue="JUnit.RabbitmqTest.testTopicB" />
+        <item itemvalue="JUnit.RabbitmqTest.testTopicA" />
+        <item itemvalue="JUnit.RabbitmqTest.testFanout" />
+        <item itemvalue="JUnit.RabbitmqTest" />
       </list>
     </recent_temporary>
   </component>
@@ -250,7 +230,8 @@
       <workItem from="1774749063938" duration="17762000" />
       <workItem from="1775133041529" duration="1349000" />
       <workItem from="1775146007913" duration="46000" />
-      <workItem from="1775357069989" duration="7618000" />
+      <workItem from="1775357069989" duration="8454000" />
+      <workItem from="1775730150247" duration="9090000" />
     </task>
     <task id="LOCAL-00001" summary="学习使用Sentinel和Gateway路由转发">
       <option name="closed" value="true" />
@@ -268,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774795295663</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="学习了RocketMQ消息队列">
+      <option name="closed" value="true" />
+      <created>1775367768336</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1775367768336</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
