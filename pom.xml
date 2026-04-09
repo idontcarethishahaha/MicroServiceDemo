@@ -25,6 +25,7 @@
         <module>rocketmq</module>
         <module>rocketmq-order</module>
         <module>rocketmq-user</module>
+        <module>rabbitmq</module>
     </modules>
 
     <properties>
