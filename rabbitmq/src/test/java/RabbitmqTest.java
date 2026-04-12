@@ -1,11 +1,17 @@
 import org.example.RabbitmqApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.amqp.core.Message;
+import org.springframework.amqp.core.MessageDeliveryMode;
+import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -36,7 +42,6 @@ public class RabbitmqTest {
     @Test
     public void testFanout() {
         String msg="玛丽有只小羊羔~";
-        //String exchangeName=prefix+"fanoutExchange";
         String exchangeName="admin.fanout.exchange";
         String routingKey="";//广播模式中，routingKey以空字符串形式即可
         rabbitTemplate.convertAndSend(exchangeName, routingKey, msg);
@@ -59,5 +64,38 @@ public class RabbitmqTest {
         String routingKey="sale.xxx";
         rabbitTemplate.convertAndSend(exchangeName, routingKey, msg);
         System.out.println("主题消息发布成功！");
+    }
+
+    // 编写测试用例生产 Headers 模式的消息
+    @Test
+    public void testHeadersA() {
+        String exchangeName="admin.headers.exchange";
+        String messageContent = "我是一个Headers消息：今天天气真好~";
+        Map<String, Object> rks = new HashMap<>(2);//rks路由键
+        rks.put("a","10");
+        rks.put("b","20");
+        MessageProperties mp = new MessageProperties();
+        mp.setDeliveryMode(MessageDeliveryMode.PERSISTENT);//消息持久化
+        mp.setContentType("UTF-8");
+        mp.getHeaders().putAll(rks);//将路由键的组合封装到消息属性的请求头中
+        Message message = new Message(messageContent.getBytes(StandardCharsets.UTF_8), mp);
+        rabbitTemplate.convertAndSend(exchangeName, "", message);//头部模式路由键空
+        System.out.println("消息投递成功");
+    }
+
+    @Test
+    public void testHeadersB() {
+        String exchangeName="admin.headers.exchange";
+        String messageContent = "我是一个Headers消息：明天多云转晴~";
+        Map<String, Object> rks = new HashMap<>(2);//rks路由键
+        rks.put("c","10");
+        //rks.put("d","20");
+        MessageProperties mp = new MessageProperties();
+        mp.setDeliveryMode(MessageDeliveryMode.PERSISTENT);//消息持久化
+        mp.setContentType("UTF-8");
+        mp.getHeaders().putAll(rks);//将路由键的组合封装到消息属性的请求头中
+        Message message = new Message(messageContent.getBytes(StandardCharsets.UTF_8), mp);
+        rabbitTemplate.convertAndSend(exchangeName, "", message);//头部模式路由键空
+        System.out.println("消息投递成功");
     }
 }

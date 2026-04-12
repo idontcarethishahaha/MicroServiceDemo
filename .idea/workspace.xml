@@ -4,14 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad841e5d-2292-44f3-8d49-30153115cef3" name="Changes" comment="学习了RocketMQ消息队列">
-      <change afterPath="$PROJECT_DIR$/rabbitmq/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/java/org/example/config/DirectConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/java/org/example/config/FanoutConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/java/org/example/config/TopicConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rabbitmq/src/test/java/RabbitmqTest.java" afterDir="false" />
+    <list default="true" id="ad841e5d-2292-44f3-8d49-30153115cef3" name="Changes" comment="学习使用RabbitMQ（直连、广播、主题模式）">
+      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/java/org/example/config/HeadersConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/java/org/example/config/TTLConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/java/org/example/listener/DirectListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/java/org/example/listener/TtlListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-common/src/main/java/org/example/entity/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-common/src/main/java/org/example/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-order/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-order/src/main/java/org/example/feign/ProductFeign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-order/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-product/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-product/src/main/java/org/example/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-product/src/main/java/org/example/mapper/ProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-product/src/main/java/org/example/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-product/src/main/java/org/example/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-product/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rabbitmq/src/test/java/RabbitmqTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq/src/test/java/RabbitmqTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +73,8 @@
     "JUnit.RabbitmqTest.executor": "Run",
     "JUnit.RabbitmqTest.testDirect.executor": "Run",
     "JUnit.RabbitmqTest.testFanout.executor": "Run",
+    "JUnit.RabbitmqTest.testHeadersA.executor": "Run",
+    "JUnit.RabbitmqTest.testHeadersB.executor": "Run",
     "JUnit.RabbitmqTest.testTopicA.executor": "Run",
     "JUnit.RabbitmqTest.testTopicB.executor": "Run",
     "JUnit.SyncOrderTest.test.executor": "Run",
@@ -96,12 +109,12 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "D:/workspace-java/MicroServiceDemo/rabbitmq/src/main/java/org/example/Main.java",
+    "onboarding.tips.debug.path": "D:/workspace-java/MicroServiceDemo/seata-order/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.28375",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "File.Encoding",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -138,15 +151,6 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.RabbitmqTest.testDirect">
-    <configuration name="RabbitmqTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rabbitmq" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RabbitmqTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RabbitmqTest.testDirect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rabbitmq" />
       <option name="PACKAGE_NAME" value="" />
@@ -157,11 +161,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RabbitmqTest.testFanout" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RabbitmqTest.testHeadersA" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rabbitmq" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="RabbitmqTest" />
-      <option name="METHOD_NAME" value="testFanout" />
+      <option name="METHOD_NAME" value="testHeadersA" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RabbitmqTest.testHeadersB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rabbitmq" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RabbitmqTest" />
+      <option name="METHOD_NAME" value="testHeadersB" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -177,30 +191,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RabbitmqTest.testTopicB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RabbitmqApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="rabbitmq" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="RabbitmqTest" />
-      <option name="METHOD_NAME" value="testTopicB" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.RabbitmqApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.RabbitmqTest" />
+      <item itemvalue="JUnit.RabbitmqTest.testHeadersA" />
+      <item itemvalue="JUnit.RabbitmqTest.testHeadersB" />
       <item itemvalue="JUnit.RabbitmqTest.testDirect" />
-      <item itemvalue="JUnit.RabbitmqTest.testFanout" />
       <item itemvalue="JUnit.RabbitmqTest.testTopicA" />
-      <item itemvalue="JUnit.RabbitmqTest.testTopicB" />
+      <item itemvalue="Spring Boot.RabbitmqApp" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.RabbitmqTest.testDirect" />
-        <item itemvalue="JUnit.RabbitmqTest.testTopicB" />
         <item itemvalue="JUnit.RabbitmqTest.testTopicA" />
-        <item itemvalue="JUnit.RabbitmqTest.testFanout" />
-        <item itemvalue="JUnit.RabbitmqTest" />
+        <item itemvalue="JUnit.RabbitmqTest.testHeadersB" />
+        <item itemvalue="JUnit.RabbitmqTest.testHeadersA" />
+        <item itemvalue="Spring Boot.RabbitmqApp" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +248,11 @@
       <workItem from="1775133041529" duration="1349000" />
       <workItem from="1775146007913" duration="46000" />
       <workItem from="1775357069989" duration="8454000" />
-      <workItem from="1775730150247" duration="9090000" />
+      <workItem from="1775730150247" duration="11002000" />
+      <workItem from="1775785678698" duration="64000" />
+      <workItem from="1775786776124" duration="2548000" />
+      <workItem from="1775789580546" duration="828000" />
+      <workItem from="1775956010174" duration="19514000" />
     </task>
     <task id="LOCAL-00001" summary="学习使用Sentinel和Gateway路由转发">
       <option name="closed" value="true" />
@@ -257,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775367768336</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="学习使用RabbitMQ（直连、广播、主题模式）">
+      <option name="closed" value="true" />
+      <created>1775744383640</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1775744383640</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +296,8 @@
     <MESSAGE value="学习适用Sentinel和Gateway路由转发" />
     <MESSAGE value="学习使用Sentinel和Gateway路由转发" />
     <MESSAGE value="学习了RocketMQ消息队列" />
-    <option name="LAST_COMMIT_MESSAGE" value="学习了RocketMQ消息队列" />
+    <MESSAGE value="学习使用RabbitMQ（直连、广播、主题模式）" />
+    <option name="LAST_COMMIT_MESSAGE" value="学习使用RabbitMQ（直连、广播、主题模式）" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -281,6 +311,11 @@
           <url>file://$PROJECT_DIR$/openfeign/src/main/java/org/example/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/seta-product/src/main/java/org/example/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

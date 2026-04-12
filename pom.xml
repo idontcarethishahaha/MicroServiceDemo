@@ -26,6 +26,9 @@
         <module>rocketmq-order</module>
         <module>rocketmq-user</module>
         <module>rabbitmq</module>
+        <module>seata-common</module>
+        <module>seata-product</module>
+        <module>seata-order</module>
     </modules>
 
     <properties>
@@ -42,6 +45,8 @@
         <micrometer-tracing-bom.version>1.0.4</micrometer-tracing-bom.version>
         <rocketmq-spring-boot-starter.version>2.2.2</rocketmq-spring-boot-starter.version>
 <!--        <rocketmq-spring-boot-starter.version>2.3.0</rocketmq-spring-boot-starter.version>-->
+        <mysql-connector-j.version>8.2.0</mysql-connector-j.version>
+        <mybatis-spring-boot-starter.version>3.0.4</mybatis-spring-boot-starter.version>
     </properties>
 
     <dependencyManagement>

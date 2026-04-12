@@ -1,0 +1,19 @@
+server:
+  port: 13701
+
+spring:
+  application:
+    name: seata-product
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.227.128:3306/micro_transaction?serverTimezone=Asia/Shanghai\
+            &useUnicode=true\
+            &characterEncoding=utf8\
+            &useSSL=false\
+            &allowPublicKeyRetrieval=true
+    username: root
+    password: root
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.227.128:8848
