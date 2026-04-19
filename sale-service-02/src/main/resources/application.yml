@@ -1,0 +1,13 @@
+server:
+  port: 14802 # 端口号
+
+xxl:
+  job:
+    admin:
+      addresses: http://192.168.227.128:9527/xxl-job-admin # 调度中心地址，集群逗号分割
+    accessToken: twgdh # 与调度中心的接头暗号（需要和调度中心服务器保持一致）
+    executor:
+      appName: sale-executor # 执行器名称
+      port: 14892 # 执行器端口，默认 9999，单机部署多个执行器时需要配置不同的执行器端口
+      logPath: ./log/xxl-job # 执行器日志存储位置
+      logRetentionDays: 30 # 执行器日志保存天数

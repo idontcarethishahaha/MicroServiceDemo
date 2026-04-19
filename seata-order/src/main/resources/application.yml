@@ -17,3 +17,21 @@ spring:
     nacos:
       discovery:
         server-addr: 192.168.227.128:8848
+
+seata:
+  enabled: true # seata全局事务开关
+  tx-service-group: default_tx_group
+  registry:
+    type: nacos
+    nacos: # 注册中心nacos
+      application: seata-server # Nacos注册中心里注册的服务名
+      server-addr: 192.168.227.128:8848
+      namespace: seata-namespace
+      cluster: default
+      group: SEATA_GROUP
+  config:
+    type: nacos
+    nacos:
+      server-addr: 192.168.227.128:8848
+      namespace: seata-namespace
+      data-id: seataServer.properties

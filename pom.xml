@@ -29,6 +29,8 @@
         <module>seata-common</module>
         <module>seata-product</module>
         <module>seata-order</module>
+        <module>sale-service-01</module>
+        <module>sale-service-02</module>
     </modules>
 
     <properties>
@@ -47,6 +49,7 @@
 <!--        <rocketmq-spring-boot-starter.version>2.3.0</rocketmq-spring-boot-starter.version>-->
         <mysql-connector-j.version>8.2.0</mysql-connector-j.version>
         <mybatis-spring-boot-starter.version>3.0.4</mybatis-spring-boot-starter.version>
+        <xxl-job-core.version>2.4.2</xxl-job-core.version>
     </properties>
 
     <dependencyManagement>

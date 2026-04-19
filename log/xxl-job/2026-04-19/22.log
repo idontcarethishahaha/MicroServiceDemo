@@ -1,0 +1,4 @@
+2026-04-19 09:51:56 [com.xxl.job.core.thread.JobThread#run]-[133]-[xxl-job, JobThread-2-1776563431576] <br>----------- xxl-job job execute start -----------<br>----------- Param:6
+2026-04-19 09:51:56 [org.example.job.XxlJobExecutor#sendMessage]-[21]-[xxl-job, JobThread-2-1776563431576] 这是一条xxl-job日志：指定用户发送一条短信
+2026-04-19 09:51:56 [com.xxl.job.core.thread.JobThread#run]-[179]-[xxl-job, JobThread-2-1776563431576] <br>----------- xxl-job job execute end(finish) -----------<br>----------- Result: handleCode=200, handleMsg = 执行成功！向用户【6】发送了一条营销短信！
+2026-04-19 09:51:56 [com.xxl.job.core.thread.TriggerCallbackThread#callbackLog]-[197]-[xxl-job, executor TriggerCallbackThread] <br>----------- xxl-job job callback finish.

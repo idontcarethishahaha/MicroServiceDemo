@@ -1,5 +1,7 @@
 package org.example.service;
 
+import io.seata.core.exception.TransactionException;
+
 /**
  * 接口说明：商品服务接口
  *
@@ -14,6 +16,6 @@ public interface ProductService {
      * @param pid 商品ID
      * @param number 购买数量
      */
-    void updateStock(Long pid,int number);
+    void updateStock(Long pid,int number) throws TransactionException;
 }
 

@@ -1,5 +1,9 @@
 package org.example.service.impl;
 
+import io.seata.core.context.RootContext;
+import io.seata.core.exception.TransactionException;
+import io.seata.spring.annotation.GlobalTransactional;
+import io.seata.tm.api.GlobalTransactionContext;
 import org.example.entity.Product;
 import org.example.mapper.ProductMapper;
 import org.example.service.ProductService;
@@ -20,12 +24,16 @@ public class ProductServiceImpl implements ProductService {
     private ProductMapper productMapper;
 
     @Override
-    public void updateStock(Long pid, int number) {
+   // @GlobalTransactional
+    public void updateStock(Long pid, int number) throws TransactionException {
         Product product = productMapper.selectById(pid);
         if(product == null) {
+            // 手动执行回滚操作，可以不加注解
+            GlobalTransactionContext.reload(RootContext.getXID()).rollback();
             throw new RuntimeException("商品不存在~");
         }
         if(product.getStock()<number){
+            GlobalTransactionContext.reload(RootContext.getXID()).rollback();
             throw new RuntimeException("商品不存在~");
         }
         // 减去购买数量，实际上应该加乐观锁

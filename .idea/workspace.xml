@@ -5,24 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad841e5d-2292-44f3-8d49-30153115cef3" name="Changes" comment="学习使用RabbitMQ（直连、广播、主题模式）">
-      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/java/org/example/config/HeadersConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/java/org/example/config/TTLConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/java/org/example/listener/DirectListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rabbitmq/src/main/java/org/example/listener/TtlListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-common/src/main/java/org/example/entity/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-common/src/main/java/org/example/entity/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-order/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-order/src/main/java/org/example/feign/ProductFeign.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-order/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-product/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-product/src/main/java/org/example/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-product/src/main/java/org/example/mapper/ProductMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-product/src/main/java/org/example/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-product/src/main/java/org/example/service/impl/ProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seata-product/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sale-service-01/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sale-service-01/src/main/java/org/example/config/XxlJobConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sale-service-01/src/main/java/org/example/job/XxlJobExecutor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sale-service-01/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sale-service-02/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sale-service-02/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-order/src/main/java/org/example/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-order/src/main/java/org/example/mapper/OrderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-order/src/main/java/org/example/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seata-order/src/main/java/org/example/service/impl/OrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rabbitmq/src/test/java/RabbitmqTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rabbitmq/src/test/java/RabbitmqTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seata-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/seata-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seata-order/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/seata-order/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seata-order/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/seata-order/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seata-product/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/seata-product/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seata-product/src/main/java/org/example/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/seata-product/src/main/java/org/example/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seata-product/src/main/java/org/example/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/seata-product/src/main/java/org/example/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seata-product/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/seata-product/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +97,7 @@
     "Spring Boot.OpenFeignProductApp.executor": "Run",
     "Spring Boot.RabbitmqApp.executor": "Run",
     "Spring Boot.RocketMQUserApp.executor": "Run",
+    "Spring Boot.SaleServiceApp01.executor": "Run",
     "Spring Boot.SentinelOrderApp.executor": "Run",
     "Spring Boot.SentinelProductApp.executor": "Run",
     "Spring Boot.ZipkinOrderApp.executor": "Run",
@@ -109,7 +110,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "D:/workspace-java/MicroServiceDemo/seata-order/src/main/java/org/example/Main.java",
+    "onboarding.tips.debug.path": "D:/workspace-java/MicroServiceDemo/sale-service-02/src/main/java/org/example/Main.java",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.28375",
@@ -150,7 +151,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RabbitmqTest.testDirect">
+  <component name="RunManager" selected="Spring Boot.SaleServiceApp01">
     <configuration name="RabbitmqTest.testDirect" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rabbitmq" />
       <option name="PACKAGE_NAME" value="" />
@@ -191,9 +192,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RabbitmqApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="rabbitmq" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.RabbitmqApp" />
+    <configuration name="SaleServiceApp01" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="sale-service-01" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.example.SaleServiceApp01" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -209,15 +210,15 @@
       <item itemvalue="JUnit.RabbitmqTest.testHeadersB" />
       <item itemvalue="JUnit.RabbitmqTest.testDirect" />
       <item itemvalue="JUnit.RabbitmqTest.testTopicA" />
-      <item itemvalue="Spring Boot.RabbitmqApp" />
+      <item itemvalue="Spring Boot.SaleServiceApp01" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.SaleServiceApp01" />
         <item itemvalue="JUnit.RabbitmqTest.testDirect" />
         <item itemvalue="JUnit.RabbitmqTest.testTopicA" />
         <item itemvalue="JUnit.RabbitmqTest.testHeadersB" />
         <item itemvalue="JUnit.RabbitmqTest.testHeadersA" />
-        <item itemvalue="Spring Boot.RabbitmqApp" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +253,10 @@
       <workItem from="1775785678698" duration="64000" />
       <workItem from="1775786776124" duration="2548000" />
       <workItem from="1775789580546" duration="828000" />
-      <workItem from="1775956010174" duration="19514000" />
+      <workItem from="1775956010174" duration="20710000" />
+      <workItem from="1776334620657" duration="7152000" />
+      <workItem from="1776407698589" duration="347000" />
+      <workItem from="1776560801537" duration="5288000" />
     </task>
     <task id="LOCAL-00001" summary="学习使用Sentinel和Gateway路由转发">
       <option name="closed" value="true" />
